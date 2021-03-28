@@ -1,7 +1,5 @@
 // import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
-const { User } = require('.');
-// import our database connection from config.js
 const sequelize = require('../config/connection');
 
 // Initialize Post model (table) by extending off Sequelize's Model class
@@ -24,11 +22,11 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_name: {
-        type: DataTypes.STRING,
+    user_id: {
+        type: DataTypes.INTEGER,
         references: {
             model: User,
-            key: name
+            key: id
         }
     }
   },
