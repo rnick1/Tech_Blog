@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
+const Post = require('./Post.js');
 
 class Comment extends Model { }
 
@@ -15,6 +15,20 @@ Comment.init(
     comment_body: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    post_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Post,
+            key: id
+        }
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: User,
+            key: id
+        }
     }
   },
   {
@@ -22,7 +36,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'tag',
+    modelName: 'comment',
   }
 );
 
