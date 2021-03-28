@@ -41,3 +41,17 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+// var myStore = new SequelizeStore({
+//   db: sequelize,
+// });
+// app.use(
+//   session({
+//     secret: "keyboard cat",
+//     store: myStore,
+//     resave: false,
+//     proxy: true,
+//   })
+// );
+
+// myStore.sync();
