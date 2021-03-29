@@ -1,15 +1,16 @@
-const sequelize = require('../config/connection');
-const { User, Post, Comment } = require('../models');
+// Connection to seed data files:
+const seedPost = require('./postData');
+const seedUser = require('./userData');
+const seedComment = require('./commentData');
 
-const userData = require('./userData');
-const postData = require('./postData');
-const commentData = require('./commentData');
+// Config connection
+const sequelize = require('../config/connection');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
-    await seedUserData();
-    await seedPostData();
-    await seedCommentData();
+    await seedUser();
+    await seedPost();
+    await seedComment();
     process.exit(0);
 };
 
