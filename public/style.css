@@ -1,0 +1,61 @@
+/* This makes the background for the body section in each webpage a light grey color.*/
+
+body {
+  background-color: #bbbbbb;
+}
+
+/* This also makes the background for a certain row and col class a light grey color. I tried to combine these with the body style above, but messed things up. Maybe that had something to do with predefined styles in bootstrap?*/
+
+.row-A .col-xs-1 {
+  background-color: #bbbbbb;
+}
+
+/* This makes the background for my cards a light grey color.*/
+
+.card-index {
+  background-color: #aaaaaa;
+}
+
+/* This gives a little margin to h1 (The headers for my cards).*/
+
+h1 {
+  margin-left: 30%;
+}
+
+/* This controls the size for the image in the card in the About/Home webpage.*/
+
+.index-img {
+  width: 45%;
+}
+
+/* This makes the background for the footer a dark grey color.*/
+
+footer {
+  background-color: grey;
+}
+
+/* This makes the background for a column a light grey color.*/
+
+.col-xs-10 {
+  background-color: #aaaaaa;
+}
+
+/* This gives extra padding to this image class.*/
+
+.card-img-top {
+  padding: 10px;
+}
+
+.contact-img {
+  width: 55%;
+}
+
+/*I was playing with row height just to see what kind of mischief I could get into and decided I liked it.*/
+
+.row-tall {
+  height: 115px;
+}
+
+#recent {
+  height: 225px;
+}
