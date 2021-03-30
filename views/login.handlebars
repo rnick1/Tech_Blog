@@ -3,40 +3,21 @@
         Login
     </div>
     <div class="card-body">
-        <form class="login-form">
-            <div class="row">
-                <div class="col">
-                    <input id="#email-login" type="text" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                    <input id="#password-login" type="text" class="form-control" placeholder="Password">
-                </div>
-                <a id="login-button" class="btn btn-primary" style="margin-right: 10px;" type="submit">Login</a>
+        <form class="form login-form">
+            <div class="form-group">
+                <label for="email-login">email:</label>
+                <input class="form-input" type="text" id="email-login" />
+            </div>
+            <div class="form-group">
+                <label for="password-login">password:</label>
+                <input class="form-input" type="password" id="password-login" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">login</button>
             </div>
         </form>
     </div>
 </div>
 <br>
-<div class="card">
-    <div class="card-header" style="font-weight: bolder;">
-        Signup
-    </div>
-    <div class="card-body">
-        <form class="signup-form">
-            <div class="row">
-                <div class="col">
-                    <input id="username-signup" type="text" class="form-control" placeholder="Username">
-                </div>
-                <div class="col">
-                    <input id="email-signup" type="text" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                    <input id="password-signup" type="text" class="form-control" placeholder="Password">
-                </div>
-                <a id="signup-button" class="btn btn-primary" style="margin-right: 10px;" type="submit">Signup</a>
-            </div>
-        </form>
-    </div>
-</div>
 
 <script src="../public/js/login.js"></script>
