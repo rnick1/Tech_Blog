@@ -11,15 +11,15 @@ router.get('/', withAuth, (req, res) => {
       },
       attributes: [
         'id',
-        'title',
+        'post_name',
         // 'created_at',
-        'post_content'
+        'post_body'
       ],
       include: [
         {
           model: Comment,
         //   May want to add 'created_at'
-          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+          attributes: ['id', 'comment_body', 'post_id', 'user_id'],
           include: {
             model: User,
             attributes: ['name']
@@ -49,15 +49,15 @@ router.get('/', withAuth, (req, res) => {
       },
       attributes: [
         'id',
-        'title',
-        'created_at',
-        // 'post_content'
+        'post_name',
+        // 'created_at',
+        'post_body'
       ],
       include: [
         {
           model: Comment,
         //   May want to add 'created_at'
-          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+          attributes: ['id', 'comment_body', 'post_id', 'user_id'],
           include: {
             model: User,
             attributes: ['name']
@@ -97,15 +97,15 @@ router.get('/create/', withAuth, (req, res) => {
       },
       attributes: [
         'id',
-        'title',
+        'post_name',
         // 'created_at',
-        'post_content'
+        'post_body'
       ],
       include: [
         {
           model: Comment,
         //   May want to include 'created_at'
-          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+          attributes: ['id', 'comment_body', 'post_id', 'user_id'],
           include: {
             model: User,
             attributes: ['name']
@@ -113,7 +113,7 @@ router.get('/create/', withAuth, (req, res) => {
         },
         {
           model: User,
-          attributes: ['username']
+          attributes: ['name']
         }
       ]
     })
