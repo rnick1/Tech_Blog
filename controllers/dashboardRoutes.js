@@ -12,27 +12,28 @@ router.get('/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        // 'created_at',
         'post_content'
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        //   May want to add 'created_at'
+          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['name']
           }
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github']
+          attributes: ['name']
         }
       ]
     })
-      .then(dbPostData => {
+      .then(postData => {
         // serialize data before passing to template
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+        const posts = postData.map(post => post.get({ plain: true }));
         res.render('dashboard', { posts, loggedIn: true });
       })
       .catch(err => {
@@ -50,31 +51,32 @@ router.get('/', withAuth, (req, res) => {
         'id',
         'title',
         'created_at',
-        'post_content'
+        // 'post_content'
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        //   May want to add 'created_at'
+          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['name']
           }
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github']
+          attributes: ['name']
         }
       ]
     })
-      .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this id' });
+      .then(postData => {
+        if (!postData) {
+          res.status(404).json({ message: 'Nothing found with this id' });
           return;
         }
   
         // serialize the data
-        const post = dbPostData.get({ plain: true });
+        const post = postData.get({ plain: true });
 
         res.render('edit-post', {
             post,
@@ -96,27 +98,28 @@ router.get('/create/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        // 'created_at',
         'post_content'
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        //   May want to include 'created_at'
+          attributes: ['id', 'comment_text', 'post_id', 'user_id'],
           include: {
             model: User,
-            attributes: ['username', 'twitter', 'github']
+            attributes: ['name']
           }
         },
         {
           model: User,
-          attributes: ['username', 'twitter', 'github']
+          attributes: ['username']
         }
       ]
     })
-      .then(dbPostData => {
+      .then(postData => {
         // serialize data before passing to template
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+        const posts = postData.map(post => post.get({ plain: true }));
         res.render('create-post', { posts, loggedIn: true });
       })
       .catch(err => {
