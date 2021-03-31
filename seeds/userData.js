@@ -14,6 +14,16 @@ const users = [
     name: "Russ Columbo",
     email: 'russ@example.com',
     password: 'passwordC'
+},
+{
+    name: "Al Ness",
+    email: 'al@example.com',
+    password: 'passwordD'
+},
+{
+    name: "Frank Ho",
+    email: 'frank@example.com',
+    password: 'passwordE'
 }
 ]
 
