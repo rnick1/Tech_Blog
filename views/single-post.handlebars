@@ -1,0 +1,23 @@
+{{> postLayout post}}
+
+{{> comment post.comments}}
+
+{{#if loggedIn}}
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-body comment-form">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Please enter your comment to this post below:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="comment-body"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<br>
+
+<script src="/js/comment.js"></script>
+{{/if}}
