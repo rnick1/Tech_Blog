@@ -34,6 +34,10 @@ N/A
 
 ### **Screenshot:**
 
+![image](https://github.com/rnick1/Tech_Blog/blob/main/assets/Tech_Blog.PNG)
+
 ### **Live application:**
+
+Coming Soon!
 
 ### If you have any questions, please contact Nick Rider at: rnick0260@gmail.com
