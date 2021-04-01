@@ -5,19 +5,19 @@
 {{#if loggedIn}}
 <br>
 <div class="container">
-    <div class="card">
-        <div class="card-body comment-form">
+    <form class="form comment-form">
+        <div class="card-body">
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Please enter your comment to this post below:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="comment-body"></textarea>
+                <label for="comment-body">Please enter your comment to this post below:</label>
+                <textarea class="form-control" id="comment-body" rows="2"></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
         </div>
-    </div>
+    </form>
 </div>
-</div>
-
 <br>
 
-<script src="/js/comment.js"></script>
+<script src="/js/add-comment.js"></script>
 {{/if}}
