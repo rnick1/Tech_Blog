@@ -15,10 +15,11 @@
     {{> postLayout post}}
 
     <a href="/dashboard/edit/{{post.id}}" class="btn btn-primary">Edit post</a>
+    <a class="btn btn-primary delete-post-button">Delete post</a>
     {{/each}}
     {{else}}
     <h6>You have no posts</h6>
     {{/if}}
 </div>
 
-{{!-- Had " id="add-post"" on line 8 before class --}}
+<script src="/js/delete-post.js"></script>
