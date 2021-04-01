@@ -2,7 +2,7 @@
     event.preventDefault();
   
     const post_name = document.querySelector('#post-title').value;
-    const post_body = document.querySelector('#post-content').value;
+    const post_body = document.querySelector('#post-body').value;
   
     const response = await fetch(`/api/posts`, {
       method: 'POST',
