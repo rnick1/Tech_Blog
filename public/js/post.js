@@ -73,6 +73,6 @@ async function newFormHandler(event) {
     
   }
   
-  document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
-  document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+  // document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
+  // document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
   document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);

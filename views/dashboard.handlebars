@@ -1,8 +1,22 @@
-<div class="card">
-    <div class="card-header" style="font-weight: bolder; font-size: x-large;">
-        Your Dashboard
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header" style="font-weight: bolder; font-size: x-large;">
+            Your Dashboard
+        </div>
+        <div class="card-body">
+            <a href="/dashboard/create/" id="create-post" class="btn btn-primary">Add post</a>
+        </div>
     </div>
-    <div class="card-body">
-        <a href="#" class="btn btn-primary">Add a post</a>
-    </div>
+    <br>
+    {{#if posts.length}}
+
+    {{#each posts as |post|}}
+    {{> postLayout post}}
+
+    <a href="/dashboard/edit/{{post.id}}" class="btn btn-primary">Edit post</a>
+    {{/each}}
+    {{else}}
+    <h6>You have no posts</h6>
+    {{/if}}
 </div>
